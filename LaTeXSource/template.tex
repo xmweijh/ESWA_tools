@@ -1,0 +1,273 @@
+%% 
+%% Copyright 2019-2020 Elsevier Ltd
+%% 
+%% This file is part of the 'CAS Bundle'.
+%% --------------------------------------
+%% 
+%% It may be distributed under the conditions of the LaTeX Project Public
+%% License, either version 1.2 of this license or (at your option) any
+%% later version.  The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.2 or later is part of all distributions of LaTeX
+%% version 1999/12/01 or later.
+%% 
+%% The list of all files belonging to the 'CAS Bundle' is
+%% given in the file `manifest.txt'.
+%% 
+%% Template article for cas-dc documentclass for 
+%% double column output.
+
+%\documentclass[a4paper,fleqn,longmktitle]{cas-dc}
+\documentclass[a4paper,fleqn]{cas-dc}
+
+% \usepackage[authoryear,longnamesfirst]{natbib}
+\usepackage[authoryear]{natbib}
+% \usepackage[numbers,sort]{natbib}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{epstopdf}
+\usepackage{color}
+\usepackage[noend]{algpseudocode}
+\usepackage{algorithmicx,algorithm}
+
+%%%Author definitions
+\def\tsc#1{\csdef{#1}{\textsc{\lowercase{#1}}\xspace}}
+\tsc{WGM}
+\tsc{QE}
+\tsc{EP}
+\tsc{PMS}
+\tsc{BEC}
+\tsc{DE}
+%%%
+
+\begin{document}
+\begin{sloppypar}
+	\let\WriteBookmarks\relax
+	\def\floatpagepagefraction{1}
+	\def\textpagefraction{.001}
+	\let\printorcid\relax
+	\shorttitle{}
+	\shortauthors{S. Zhang et~al.} %% 缩略作者 自己名字， 比如： 张三 = S. Zhang
+
+	%% 标题
+	\title [mode = title]{Community Detection}
+	%%\tnotemark[1,2]
+
+	%%\tnotetext[1]{This document is the results of the research project funded by the National Science Foundation.}
+
+	%%\tnotetext[2]{The second title footnote which is a longer text matter to fill through the whole text width and overflow into another line in the footnotes area of the first page.}
+
+
+	%% 作者顺序
+	%% 1
+	\author[1]{\textcolor[RGB]{0,0,1}{Zhangsan}}
+	\fnmark[1]
+	% \cormark[1]%%通讯作者星标
+	\ead{abc@123.edu.cn}
+
+
+	%% 2
+	\author[1]{\textcolor[RGB]{0,0,1}{Lisi}}
+	\fnmark[1] %%第几作者
+	%\credit{}%%本文的贡献
+	\address[1]{School of Computer Science and Technology, ***, Chongqing 400065, China}
+	\cormark[1]%%通讯作者星标
+	\ead{abc@123.edu.cn}
+
+	\author[1]{\textcolor[RGB]{0,0,1}{Wangermazi}}
+	\ead{abc@123.edu.cn}
+
+
+
+
+	\cortext[cor1]{Corresponding author.} %% 首页左下角通讯作者
+	%%\cortext[cor2]{Principal corresponding author} 
+
+	\fntext[fn1]{Equal Contribution.}
+	%%\fntext[fn2]{Another author footnote, this is a very long footnote and it should be a really long footnote. But this footnote is not yet sufficiently long enough to make two lines of footnote text.}
+
+	%%\nonumnote{This note has no numbers. In this work we demonstrate $a_b$ the formation Y\_1 of a new type of polariton on the interface between a cuprous oxide slab and a polystyrene micro-sphere placed on the slab.}
+
+	%%摘要
+	\begin{abstract}
+		Community detection 
+	\end{abstract}
+
+	% \begin{graphicalabstract}
+	% 	%%\includegraphics{./grabs.pdf} %%图片摘要地址路径
+	% \end{graphicalabstract}
+
+	%%高亮
+	% \begin{highlights}
+	% 	\item End-to-end community detection method based on graph convolution network.
+	% 	\item A new community perspective similarity is proposed.
+	% 	\item Modify the convolution layer for large networks.
+	% 	\item The loss function based on modularity and Bernoulli Poisson model is introduced.
+	% 	\item Evaluate performance using real-world networks.
+	% \end{highlights}
+		
+	%% 关键词
+	\begin{keywords}
+		Community detection \sep
+		Graph convolutional network 
+	\end{keywords}
+
+	% 此指令为生成标题格式，不可删除
+	\maketitle
+
+	%% 1.引言
+	\section{Introduction}
+
+	%%\par{文本内容}换行并缩进
+	\par{
+		Many approaches have been proposed.
+	}
+
+	\par{
+		Traditional methods \citep{9732192}.
+	}
+
+
+
+	\begin{enumerate}[(1)]
+		\item We 
+		\item networks.
+		\item Extensive experiments
+	\end{enumerate}
+
+	\par{
+		The rest of this paper is organized as follows. In Section \ref{Related_work}.
+	}
+
+
+	%% 图1  后面要加就自己复制这个改改
+	\begin{figure}[h] % htbp详见说明书，记得删除括号内容
+		\centering % 居中
+		\includegraphics[width=0.9\linewidth]{./123.png}% 图片地址，可以pdf可以jpg，scale是缩放比例
+		\caption{buxiangkanlunwenle.} % 图片标题
+		\label{FIG:1} % 这里只要改冒号后面的数字，图片几就是几
+	\end{figure}
+
+
+	%% 2.第二章
+	\section{Related work}
+	\label{Related_work}
+	\par{
+		Our work
+	}
+
+	\subsection{Community detection}
+	\par{
+		Community detection 
+	}
+
+	\subsection{Graph}
+
+	\par{
+		Graph
+	}
+
+
+
+	\section{Preliminaries}
+	\label{Preliminaries}
+	\par{
+		In this section
+	}
+
+
+	\section{Methodology}
+	\label{Methodology}
+	\par{
+		This section 
+	}
+
+
+	\begin{algorithm}[ht]
+		\caption{123}
+		\label{alg:1}
+		\hspace*{0.02in} {\bf Input:}
+		123.\\
+		\hspace*{0.02in} {\bf Output:}
+		123
+		\begin{algorithmic}[1]
+			\State 123
+			\State 123
+			\State 123
+			\For{$t=1...MaxIter$}
+			\State 123
+			\State 123
+			\State 123
+			\If{123}
+			\State 123
+			\EndIf
+			\If{$early\_stopping > 100 $}
+			\State Break.
+			\EndIf
+			\State Update the parameters in the model with the Adam optimizer.
+			\EndFor
+			\State \Return 123
+		\end{algorithmic}
+	\end{algorithm}
+
+
+	\section{EXPERIMENTS}
+	\label{EXPERIMENTS}
+	\par{
+		In this section
+	}
+
+	\begin{table}[width=.9\linewidth,cols=4,pos=ht]
+		\caption{Datasets for Community Detection}
+		\label{tbl1}
+		\begin{tabular}{lllll}
+			\hline
+			\textbf{Dataset} & \multicolumn{1}{c}{\textbf{N}} & \multicolumn{1}{c}{\textbf{M}} & \multicolumn{1}{c}{\textbf{K}} & \multicolumn{1}{c}{\textbf{|X|}} \\ \hline
+			CiteSeer         & 3327                           & 4552                           & 6                              & 3703                             \\
+			CiteSeer-full    & 4230                           & 5337                           & 6                              & 602                              \\
+			Cora             & 2708                           & 5278                           & 7                              & 1433                             \\
+			Cora-ML          & 2995                           & 8158                           & 7                              & 2879                             \\
+			Cora-full        & 19793                          & 63421                          & 70                             & 8710                             \\
+		\end{tabular}
+	\end{table}
+
+
+	\section{Conclusion}
+	\label{Conclusion}
+	\par{
+		This paper
+	}
+
+	\section*{CRediT authorship contribution statement}
+	\par{Zhangsan: Methodology, Conceptualization, Investigation, Writing - Review \& Editing. }
+
+	\section*{Declaration of competing interest}
+	\par{The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.}
+
+	\section*{Funding}
+	\par{This work was jointly supported by the following projects: }
+
+	% 致谢
+	\section*{Acknowledgements}
+	\par{The authors would like to thank the reviewers for their insightful comments and useful suggestions.}
+
+
+
+	%% Loading bibliography style file
+	\bibliographystyle{model5-names}
+	% \bibliographystyle{cas-model2-names}
+
+	% Loading bibliography database
+	\bibliography{cas-refs}
+
+	%\vskip3pt
+
+	%\bio{}
+	%Author biography without author photo.
+
+	%\endbio
+
+\end{sloppypar}
+\end{document}
+

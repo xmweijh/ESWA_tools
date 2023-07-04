@@ -1,0 +1,140 @@
+% LaTeX rebuttal letter example. 
+\documentclass[12pt,review]{elsarticle}
+\usepackage[utf8]{inputenc}
+\usepackage{fullpage}
+\usepackage{framed} % to add frames around comments
+\usepackage{color, soul}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins, breakable, theorems}
+
+\usepackage{xifthen}
+% define counters for reviewers and their points
+\newcounter{reviewer}
+\setcounter{reviewer}{0}
+\newcounter{point}[reviewer]
+\setcounter{point}{0}
+
+% This refines the format of how the reviewer/point reference will appear.
+\renewcommand{\thepoint}{P\,\thereviewer.\arabic{point}} 
+
+% command declarations for reviewer points and our responses
+\newcommand{\reviewersection}{\stepcounter{reviewer} \bigskip \hrule
+                  \section*{Reviewer \thereviewer}}
+
+\newenvironment{point}
+   {\refstepcounter{point} \bigskip \noindent {\textbf{Reviewer~Point~\thepoint} } ---\ \color{blue}}
+   {\par}
+
+\newenvironment{revision}[2][]
+   {\begin{tcolorbox}[breakable, enhanced, colback = yellow, 
+   title = Revision \thepoint \  #2,#1,
+   colbacktitle = red!85!black, colframe = red!75!black
+   ]\normalfont}
+   {\par\end{tcolorbox}}
+
+\newcommand{\shortpoint}[1]{\refstepcounter{point}  \bigskip \noindent 
+	{\textbf{Reviewer~Point~\thepoint} } ---~#1\par }
+
+\newenvironment{reply}
+   {\medskip \noindent \textbf{Reply}:\ \begin{sf}}
+   {\medskip \end{sf}}
+
+\newcommand{\shortreply}[2][]{\medskip \noindent \begin{sf}\textbf{Reply}:\  #2
+	\ifthenelse{\equal{#1}{}}{}{ \hfill \footnotesize (#1)}%
+	\medskip \end{sf}}
+
+% Line & Page
+\newcommand{\linepage}[2]{
+\par \rightline{\textbf{Line #1, Page #2}}
+}
+
+\def\myauthor{Author 1 \footnote{
+	Author 1 Department
+}
+, Author 2 \footnote{
+	Author 2 Department
+}} % Author
+
+\def\mycoauthor{Author 1, Author 2} 
+\def\mytitle{Paper Title} % title
+\def\myarticleno{Paper No}
+\def\mydate{\today} % date
+
+\begin{document}
+\setulcolor{blue} 
+\setstcolor{red} 
+\sethlcolor{yellow} 
+
+\begin{titlepage}
+\noindent \textbf{\myarticleno} \\
+\mytitle \\
+\myauthor
+\begin{center}
+  \vspace{1cm}
+
+  \Large \textbf{Response to Editors \& Reviewers}
+
+  \vspace{1cm}
+\end{center}
+
+\begin{tcolorbox}[title = To editors and reviewers]
+Dear editors and reviewers:
+
+\quad We are very grateful to the anonymous reviewers and editors for their invaluable time and effort in reviewing our manuscript and particularly providing constructive comments and suggestions for significantly improving the manuscript. 
+
+\quad By carefully considering the comments and suggestions provided by the referees, revisions have been made and the main changes are summarized below.
+\begin{itemize}
+	\item ...
+	\item ...
+	\item ...
+\end{itemize}
+\mycoauthor \\
+\mydate
+\end{tcolorbox}
+
+\end{titlepage}
+
+\section*{RREPLY TO EDITORS \& REVIEWERS}
+% General intro text goes here
+Again, we would like to express our gratitude to all reviewers and the Editors for their time and effort in reviewing and processing our manuscript and especially providing constructive comments and valuable suggestions for significantly improving the manuscript. Following these comments and suggestions, we have made changes in the revised manuscript. A point-by-point reply to the reviewer’s comments is given below, where in each case we quote the referee’s comments and then explain how we have revised the paper to accommodate the revisions requested. 
+For easy cross-referencing, the comments are \textcolor{blue}{marked in blue} while our responses are in \begin{sf}black sans serif fontmat\end{sf}. Meanwhile, the contents in the revised paper are \hl{highlighted by yellow shading}.
+
+% Let's start point-by-point with Reviewer 1
+\reviewersection
+\textcolor{blue}{Points summary.} 
+
+\begin{reply}
+	Reply summary.
+\end{reply}
+
+% Point one description 
+\begin{point}
+	Sub Point 1.
+\end{point}
+
+% Our reply
+\begin{reply}
+	Sub Reply 1
+	\begin{revision}{}
+		Revision content.
+		\linepage{27-29}{7}
+	\end{revision}
+\end{reply}
+
+\begin{point}
+	Sub Point 2.
+\end{point}
+
+\begin{reply}
+	Sub reply 2.
+	\begin{revision}{}
+		Revision content.
+		\linepage{27-29}{7}
+	\end{revision}
+\end{reply}
+
+\reviewersection
+\reviewersection
+
+\end{document}
