@@ -154,8 +154,15 @@
 	\section{Related work}
 	\label{Related_work}
 	\par{
-		Our work
+		Our work \ref{FIG:frame}
 	}
+
+	\begin{figure*}[width=\textwidth,ht!] % 双栏图片
+		\centering % 居中
+		\includegraphics[width=0.3\textwidth]{./123.png}% 图片地址，可以pdf可以jpg，scale是缩放比例
+		\caption{XXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXX} % 图片标题
+		\label{FIG:frame} % 这里只要改冒号后面的数字，图片几就是几
+	\end{figure*}
 
 	\subsection{Community detection}
 	\par{
@@ -232,6 +239,21 @@
 		\end{tabular}
 	\end{table}
 
+
+	\begin{table*}[width=\textwidth,cols=4,pos=ht]
+		\caption{12345 xxxxxxxxxxxxxxxxx xxXX  X XX XXXXXXXXXXX X  XXXXXX.}
+		\label{tbl2}
+		\resizebox{\linewidth}{!}{
+			\begin{tabular}{c|c|ccccccccccccc|c}
+				\hline
+				Dataset                   & Metric & AE     & DEC   & IDEC  & GAE   & VGAE  & ComE & ARGA & DAEGC & SDCN  & DFCN          & AGCN           & CaEGCN               & SEDCN & IEDGCN         \\ \hline
+				\multirow{4}{*}{USPS}     & ACC    & 1  	& 2 	& 3 	& 3 	& 4		& 5    & 6 	  & 7 	  & 8 	  & 9         	  & \textbf{10}    & 11               	  & 12    & 13             \\
+										  & NMI    & 1  	& 2 	& 3 	& 3 	& 4		& 5    & 6 	  & 7 	  & 8 	  & \textbf{9}	  & 10             & 11               	  & 12    & 13             \\
+										  & ARI    & 1  	& 2 	& 3 	& 3 	& 4		& 5    & 6 	  & 7 	  & 8 	  & \textbf{9}	  & 10             & 11               	  & 12    & 13             \\
+										  & F1     & 1  	& 2 	& 3 	& 3 	& 4		& 5    & 6 	  & 7 	  & 8 	  & 9         	  & 10             & 11               	  & 12    & \textbf{13}    \\ \hline
+				\end{tabular}	   	   	   
+		}
+	\end{table*}
 
 	\section{Conclusion}
 	\label{Conclusion}
